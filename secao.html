@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo sites</title>
+    <style>
+        body {
+            background-color: rgb(161, 179, 179);
+            font: bold 20pt cursive;
+
+
+        }
+        header{
+            text-align: center;
+
+
+        }
+        section{
+            background-color: darkgray;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 100px;
+            width: auto;
+            box-shadow: 10px 10px 18px black;
+            color: blue;
+            font: bold 25px cursive;
+            text-align: center;
+
+        }
+        footer{
+            text-align: center;
+            font-size: x-large;
+            font-style: italic;
+
+
+        }
+
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Roseli Miranda Contabilidade</h1>
+    </header>
+    <section>
+        <div id="msg">
+        <p>Contabilidade Publica e Privada</p>
+        </div>
+        <p>Soluções Contabeís para qualquer dia e qualquer hora</p>
+        <div id="foto">
+            <img id = "imagem"src="imagens/manha_redondo.png" alt="">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; AGROntijo Tecnologia</p>
+    </footer>
+    <script>
+        function carregar(){
+        var msg = window.document.getElementById('msg')
+        var img = window.document.getElementById('imagem')
+        var data = new Date()
+        var hora = data.getHours()
+        msg.innerHTML = `Agora são ${hora} horas!` 
+        if(hora >= 0 && hora< 12){
+            //bom dia
+            img.src = 'imagens/manha_redondo.png'
+            document.body.style.background = '#cbc5cc' 
+
+        } else if (hora >= 12 && hora < 18){
+            //Boa tarde
+            img.src = 'imagens/tarde_redondo.png'
+            document.body.style.background = '#f1a889'
+
+        } else {
+            //Boa noite
+            img.src = 'imagens/noite_redondo.png'
+            document.body.style.background = '#3e2a1d'
+
+        }
+
+        }
+    </script>
+</body>
+</html>
